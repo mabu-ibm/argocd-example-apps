@@ -16,7 +16,7 @@ spec:
       - image: alexeiled/stress-ng
         name: stress-ng
         command: ["/stress-ng"]
-        args: ["-c", "2", "-l", "100", "-v"]
+        args: ["-c", "20", "-l", "100", "-v"]
         resources:
           limits:
             cpu: 1000m
