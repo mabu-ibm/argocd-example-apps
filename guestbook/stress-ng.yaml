@@ -16,12 +16,12 @@ spec:
       - image: alexeiled/stress-ng
         name: stress-ng
         command: ["/stress-ng"]
-        args: ["-c", "200", "-l", "100", "-v"]
+        args: ["-c", "100", "-l", "100", "-v"]
         resources:
           requests:
-            cpu: 100m
+            cpu: "1000m"
           limits:
-            cpu: 500m
+            cpu: "2000m"
 
 # -c 2 : Spawn two workers
 # -l 100  , -l P, --cpu-load P         load CPU by P %%, 0=sleep, 100=full load
