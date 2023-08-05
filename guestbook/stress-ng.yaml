@@ -18,10 +18,10 @@ spec:
         command: ["/stress-ng"]
         args: ["-c", "1000", "-l", "100", "-v"]
         resources:
-          requests:
-            cpu: "1"
+#          requests:
+#            cpu: "1"
           limits:
-            cpu: "2"
+            cpu: "2000m"
 
 # -c 2 : Spawn two workers
 # -l 100  , -l P, --cpu-load P         load CPU by P %%, 0=sleep, 100=full load
