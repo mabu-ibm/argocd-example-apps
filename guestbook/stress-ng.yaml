@@ -13,16 +13,18 @@ spec:
         app.kubernetes.io/name: stress-ng
     spec:
       containers:
-      - image: alexeiled/stress-ng
+      - args:
+        - -c
+        - "50"
+        - -l
+        - "100"
+        - -v
+        command:
+        - /stress-ng
+        image: alexeiled/stress-ng
         name: stress-ng
-        command: ["/stress-ng"]
-        args: ["-c", "50", "-l", "100", "-v"]
         resources:
-          requests:
-            cpu: "10m"
           limits:
-            cpu: "100m"
-
-# -c 2 : Spawn two workers
-# -l 100  , -l P, --cpu-load P         load CPU by P %%, 0=sleep, 100=full load
-# -v --verbose
+            cpu: 300m
+          requests:
+            cpu: 10m
